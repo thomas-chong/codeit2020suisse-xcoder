@@ -17,10 +17,10 @@ def soc_dis_main():
     # logging.info("result : {}".format(result))
     ans = {}
     for i in range(1, len(n) + 1):
-        # seats = n[str(i)]["seats"]
-        # people = n[str(i)]["people"]
-        # spaces = n[str(i)]["spaces"]
-        res = ways(n[str(i)]["seats"], n[str(i)]["people"], n[str(i)]["spaces"])
+        seats = n[str(i)]["seats"]
+        people = n[str(i)]["people"]
+        spaces = n[str(i)]["spaces"]
+        res = ways(seats, people, spaces)
         # res = ways(seats, people, spaces)
         ans[str(i)] = res
     
@@ -34,5 +34,5 @@ def ways(seats, people, spaces):
     n = seats-spaces*people+1
     c = people
     
-    count = math.factorial(people)/(math.factorial(c)*math.factorial(people-c))
+    count = math.factorial(people)/((math.factorial(c)*math.factorial(people-c)))
     return count
