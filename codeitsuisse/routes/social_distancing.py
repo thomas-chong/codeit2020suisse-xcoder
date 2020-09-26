@@ -33,6 +33,6 @@ def ways(seats, people, spaces):
     count = 0
     n = people + spaces * (people-1) + 1
     c = seats - (people + spaces * (people-1))
-    if (n > 0 and (n-c) > 0):
+    if (c > 0):
         count = int(math.factorial(n)/((math.factorial(c)*math.factorial(n-c))))
     return count
