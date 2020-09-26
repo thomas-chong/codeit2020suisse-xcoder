@@ -12,8 +12,10 @@ logger = logging.getLogger(__name__)
 def main():
     data = request.get_json()
     #logging.info("data sent for evaluation {}".format(data))
-    for i in range(len(data["list"])):
-        data["list"][i]["geneSequence"] = reOrder(l[i].get("geneSequence"))
+    l = data.get('list')
+    n = len(l)
+    for i in range(n):
+        data['list'][i]['geneSequence'] = reOrder(l[i].get('geneSequence'))
     #logging.info("answer : {}".format(answer))
     return jsonify(data)
 
