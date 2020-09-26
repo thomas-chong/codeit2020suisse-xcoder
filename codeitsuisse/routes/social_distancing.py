@@ -30,15 +30,8 @@ def soc_dis_main():
 def ways(seats, people, spaces):
     l = []
     count = 0
-    for i in range(seats):
-        l.append(i)
-    comb = combinations(l, people)
-    for i in list(comb): 
-        correct = True
-        for j in range(len(list(i))-1):
-            if (i[j+1] - i[j] <= spaces):
-                correct = False
-        if (correct):
-            #print(i)
-            count+=1
+    n = seats-empty*people+1
+    c = people.factorial()/(c.factorial()*(people-c).factorial())
+    
+    count = n.face
     return count
