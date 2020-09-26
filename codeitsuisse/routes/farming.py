@@ -49,9 +49,12 @@ def reOrder(s):
 
     count_c = int(freq["C"])
     while (count_c != 0):
-        res.append("CC")
-        freq["C"] -= 2
-        count_c -= 2
+        if (freq["C"] == 1):
+            break
+        else:    
+            res.append("CC")
+            freq["C"] -= 2
+            count_c -= 2
 
     while (min([freq["A"],freq["C"],freq["G"],freq["T"]]) > 0):
         res.append("ACGT")
