@@ -5,6 +5,7 @@ from flask import request, jsonify;
 
 from codeitsuisse import app
 from itertools import combinations
+import math 
 
 logger = logging.getLogger(__name__)
 
@@ -33,5 +34,5 @@ def ways(seats, people, spaces):
     n = seats-spaces*people+1
     c = people
     
-    count = people.factorial()/(c.factorial()*(people-c).factorial())
+    count = math.factorial(people)/(math.factorial(c)*math.factorial(people-c))
     return count
