@@ -10,14 +10,14 @@ logger = logging.getLogger(__name__)
 @app.route('/revisitgeometry', methods=['POST'])
 def geometry_main():
     data = request.get_json()
-    logging.info("data sent for evaluation {}".format(data))
+    #logging.info("data sent for evaluation {}".format(data))
 
     s = data.get("shapeCoordinates")
     l = data.get("lineCoordinates")
 
     result = res(s,l)
 
-    logging.info("result : {}".format(result))
+    #logging.info("result : {}".format(result))
     return jsonify(result)
 
 def res(s, l):

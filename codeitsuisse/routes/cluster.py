@@ -8,9 +8,9 @@ from codeitsuisse import app;
 logger = logging.getLogger(__name__)
 
 @app.route('/cluster', methods=['POST'])
-def cluster_main():
+def main():
     board = request.get_json()
-    logging.info("data sent for evaluation {}".format(data))
+    #logging.info("data sent for evaluation {}".format(data))
     cnt = 0
     for i in range(len(board)):
         for j in range(len(board[0])):
@@ -20,7 +20,7 @@ def cluster_main():
     
     answer = {"answer" : cnt}
 
-    logging.info("answer : {}".format(answer))
+    #logging.info("answer : {}".format(answer))
     return jsonify(answer)
 
 def dfs(board, i, j):
