@@ -31,10 +31,11 @@ def soc_dis_main():
 def ways(seats, people, spaces):
     l = []
     count = 0
-    n = people + spaces * (people-1) + 1
-    if (n > seats):
+    required = people + spaces * (people-1)
+    if (required > seats):
         return count
-    c = seats - (people + spaces * (people-1))
+    n = required + 1
+    c = seats - required
     if (c > 0):
         count = int(math.factorial(n)/((math.factorial(c)*math.factorial(n-c))))
     return count
