@@ -27,7 +27,7 @@ def res(s, l):
         line2 = [[int(l[0]["x"]),int(l[0]["y"])], [int(l[1]["x"]),int(l[1]["y"])]]
         temp = line_intersection(line1,line2)
         if temp:
-            result.append({"x" : temp[0], "y" : temp[1]})
+            result.append({"x" : float("{:.2f}".format(temp[0])), "y" : float("{:.2f}".format(temp[1]))})
     return result
 
 
