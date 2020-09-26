@@ -39,6 +39,6 @@ def ways(seats, people, spaces):
             if (i[j+1] - i[j] <= spaces):
                 correct = False
         if (correct):
-            print(i)
+            #print(i)
             count+=1
     return count
