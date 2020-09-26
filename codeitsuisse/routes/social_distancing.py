@@ -13,11 +13,12 @@ def soc_dis_main():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     n = data.get("tests")
+    logging.info("result : {}".format(result))
     ans = []
     for i in range(len(n)):
-        seats = n[i].get("seats")
-        people = n[i].get("people")
-        spaces = n[i].get("spaces")
+        seats = n[str(i)]["seats"] #n["0"]["seats"] i = 0 str(0) -> "0"
+        people = n[str(i)]["people"]
+        spaces = n[str(i)]["spaces"]
         ans.append({}, "i", ":", ways(seats, people, spaces))
     
     result = {"answers" : ans}
