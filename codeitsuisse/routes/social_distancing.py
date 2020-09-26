@@ -4,7 +4,7 @@ import json
 from flask import request, jsonify;
 
 from codeitsuisse import app
-from itertools import permutations 
+from itertools import combinations
 
 logger = logging.getLogger(__name__)
 
