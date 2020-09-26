@@ -32,7 +32,7 @@ def optimalNum(numBook, numDay, books, days):
         for j in range(len(res)):
             if (sum(res[j]) > targetTime):
                 res[j].remove(res[j][-1])
-        print(res)
+        #print(res)
         
         max_length = len(res[0])
         min = targetTime - sum(res[0])
@@ -46,13 +46,13 @@ def optimalNum(numBook, numDay, books, days):
             elif (diff < min and diff >= 0 and res[j] == max_length):
                 min = diff
                 target = res[j]
-        print(target)
+        #print(target)
         
         count += len(target)
         for j in range(len(target)):
             remain_books.remove(target[j])
-        print(remain_books)
-        print("---------------------")
+        #print(remain_books)
+        #print("---------------------")
     return count
 
 def dfs(nums, temp, index, res, path):
