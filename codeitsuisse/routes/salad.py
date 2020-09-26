@@ -13,8 +13,8 @@ def main():
     logging.info("data sent for evaluation {}".format(data))
     n = data.get("number_of_salads");
     s = data.get("salad_prices_street_map")
-    result = search(n, s)
-    logging.info("result :{}".format(result))
+    result = {"result" : search(n, s)}
+    logging.info("result : {}".format(result))
     return jsonify(result)
 
 def search(n, street_map):
