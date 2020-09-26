@@ -23,8 +23,8 @@ def geometry_main():
 def res(s, l):
     result = []
     for i in range(len(s)):
-        line1 = [s[i-1],s[i]]
-        line2 = [l[0],l[1]]
+        line1 = [[int(s[i-1]["x"]), int(s[i-1]["y"])], [int(s[i]["x"]), int(s[i]["y"])]]
+        line2 = [[int(l[0]["x"]),int(l[0]["y"])], [int(l[1]["x"]),int(l[1]["y"])]]
         temp = line_intersection(line1,line2)
         if temp:
             result.append({"x" : temp[0], "y" : temp[1]})
