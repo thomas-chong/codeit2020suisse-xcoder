@@ -4,4 +4,3 @@ import codeitsuisse.routes.square
 import codeitsuisse.routes.secret_message
 import codeitsuisse.routes.salad
 import codeitsuisse.routes.geometry
-
