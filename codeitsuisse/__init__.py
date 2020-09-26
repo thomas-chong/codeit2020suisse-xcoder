@@ -8,4 +8,5 @@ app = Flask(__name__)
 #import codeitsuisse.routes.cluster
 #import codeitsuisse.routes.fruit
 #import codeitsuisse.routes.farming
-import codeitsuisse.routes.olympiad
+#import codeitsuisse.routes.olympiad
+import codeitsuisse.routes.portfolio
