@@ -18,7 +18,8 @@ def main():
     # banana = data.get("maBanana")
     total = 0
     for key, value in data.items():
-        total += value * 42
+        total += value * 40
+    print(total)
 
 
     # guess = apple * 50 + watermelon * 50 + banana * 50
