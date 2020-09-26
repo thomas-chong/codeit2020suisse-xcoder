@@ -16,7 +16,7 @@ def soc_dis_main():
     # logging.info("result : {}".format(result))
     ans = {}
     for i in range(len(n)):
-        seats = n[str(i)]["seats"] #n["0"]["seats"] i = 0 str(0) -> "0"
+        seats = n[str(i)]["seats"]
         people = n[str(i)]["people"]
         spaces = n[str(i)]["spaces"]
         res = ways(seats, people, spaces)
