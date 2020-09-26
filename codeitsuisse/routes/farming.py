@@ -10,7 +10,9 @@ logger = logging.getLogger(__name__)
 
 @app.route('/intelligent-farming', methods=['POST'])
 def main():
-    data = request.get_json()
+    raw = request.get_data()
+    data = json.loads(raw.decode('utf-8'))
+    # data = request.get_json()
     #logging.info("data sent for evaluation {}".format(data))
     l = data.get("list")
     for i in range(len(l)):
