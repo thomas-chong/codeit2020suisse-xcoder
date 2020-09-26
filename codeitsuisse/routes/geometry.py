@@ -8,7 +8,7 @@ from codeitsuisse import app;
 logger = logging.getLogger(__name__)
 
 @app.route('/revisitgeometry', methods=['POST'])
-def main():
+def geometry_main():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
 
@@ -48,4 +48,3 @@ def line_intersection(line1, line2):
     y = det(d, ydiff) / div
     if (x <= max(line1[0][0],line1[1][0]) and x >= min(line1[0][0],line1[1][0]) and y <= max(line1[0][1], line1[1][1]) and y >= min(line1[0][1], line1[1][1])):
         return [x, y]
-    return
