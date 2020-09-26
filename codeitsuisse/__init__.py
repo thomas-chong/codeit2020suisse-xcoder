@@ -6,5 +6,6 @@ app = Flask(__name__)
 #import codeitsuisse.routes.geometry
 #import codeitsuisse.routes.social_distancing
 #import codeitsuisse.routes.cluster
-import codeitsuisse.routes.fruit
+#import codeitsuisse.routes.fruit
 #import codeitsuisse.routes.farming
+import codeitsuisse.routes.olympiad
