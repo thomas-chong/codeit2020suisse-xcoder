@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 @app.route('/intelligent-farming', methods=['POST'])
 def main():
     data = request.get_json()
-    logging.info("data sent for evaluation {}".format(data))
+    print(data)
     for i in range(len(data['list'])):
         data['list'][i]['geneSequence'] = reOrder(data['list'][i]['geneSequence'])
     #logging.info("answer : {}".format(answer))
