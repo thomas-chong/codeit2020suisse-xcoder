@@ -20,7 +20,7 @@ def main():
     logging.info("result : {}".format(result))
     return jsonify(result)
 
-def res():
+def res(s, l):
     result = []
     for i in range(len(s)):
         line1 = [s[i-1],s[i]]
