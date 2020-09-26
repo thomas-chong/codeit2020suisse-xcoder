@@ -19,4 +19,4 @@ def main():
     result = "{}".format(guess)
 
     #logging.info("answer : {}".format(answer))
-    return jsonify(guess)
+    return jsonify(result)
