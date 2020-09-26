@@ -19,7 +19,8 @@ def soc_dis_main():
         seats = n[str(i)]["seats"] #n["0"]["seats"] i = 0 str(0) -> "0"
         people = n[str(i)]["people"]
         spaces = n[str(i)]["spaces"]
-        ans.append({}, "i", ":", ways(seats, people, spaces))
+        res = ways(seats, people, spaces)
+        ans.append{str(i) : res}
     
     result = {"answers" : ans}
     logging.info("result : {}".format(result))
