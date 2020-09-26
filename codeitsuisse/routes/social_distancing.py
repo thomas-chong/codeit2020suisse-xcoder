@@ -31,7 +31,7 @@ def ways(seats, people, spaces):
     l = []
     count = 0
     n = seats-empty*people+1
-    c = people.factorial()/(c.factorial()*(people-c).factorial())
+    c = people
     
-    count = n.face
+    count = people.factorial()/(c.factorial()*(people-c).factorial())
     return count
