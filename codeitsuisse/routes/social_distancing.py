@@ -37,5 +37,5 @@ def ways(seats, people, spaces):
     reamin = seats - required
     n = reamin
     c = people
-    count = int(math.factorial(n+c)/math.factorial(c)/math.factorial(n))
+    count = int(math.factorial(n+c)/(math.factorial(c)*math.factorial(n)))
     return count
