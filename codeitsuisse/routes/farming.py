@@ -13,7 +13,7 @@ def main():
     data = request.get_json()
     #logging.info("data sent for evaluation {}".format(data))
     for i in data['list']:
-        data['list'][i]['geneSequence'] = reOrder(l[i].get('geneSequence'))
+        data['list'][i]['geneSequence'] = reOrder(data['list'][i]['geneSequence'])
     #logging.info("answer : {}".format(answer))
     return jsonify(data)
 
