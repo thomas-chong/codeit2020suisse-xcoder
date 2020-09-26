@@ -9,7 +9,8 @@ logger = logging.getLogger(__name__)
 
 @app.route('/fruitbasket', methods=['POST'])
 def main():
-    data = request.get_data()
+    raw = request.get_data()
+    data = json.loads(raw.decode('utf-8'))
     #logging.info("data sent for evaluation {}".format(data))
     # apple = data.get("maApple")
     # watermelon = data.get("maWatermelon")
