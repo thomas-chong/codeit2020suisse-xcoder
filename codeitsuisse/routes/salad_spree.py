@@ -21,7 +21,7 @@ def evaluateSecretMessage():
     
     return jsonify(result)
 
-# def search():
+# def search(n, street_map):
 #     res = []
 #     for i in range(len(street_map)):
 #         cnt = 0
@@ -30,10 +30,10 @@ def evaluateSecretMessage():
 #             if street_map[i][j] == ‘X’:
 #                 cnt = 0
 #             else:
-#                 cnt += street_map[i][j]
+#                 cnt += int(street_map[i][j])
 # 			    length += 1
-# 	    if length >= n:
-# 		    res.append(cnt)
+#                 if length >= n:
+#                     res.append(cnt)
 #     if not res:
 #         return 0
 #     return min(res)
