@@ -15,7 +15,7 @@ def main():
     s = data.get("salad_prices_street_map")
     result = search(n, s)
     logging.info("result :{}".format(result))
-    return json.dumps(result);
+    return jsonify(result)
 
 def search(n, street_map):
     res = []
