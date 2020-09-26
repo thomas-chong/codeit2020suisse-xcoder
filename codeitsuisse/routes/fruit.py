@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 def main():
     raw = request.get_data()
     data = json.loads(raw.decode('utf-8'))
+    print(data)
     #logging.info("data sent for evaluation {}".format(data))
     # apple = data.get("maApple")
     # watermelon = data.get("maWatermelon")
