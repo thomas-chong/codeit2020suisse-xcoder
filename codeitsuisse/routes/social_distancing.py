@@ -34,8 +34,8 @@ def ways(seats, people, spaces):
     required = people + spaces * (people-1)
     if (required > seats):
         return count
-    n = required + 1
-    c = seats - required
-    if ((n-c) > 0):
-        count = int(math.factorial(n)/((math.factorial(c)*math.factorial(n-c))))
+    reamin = seats - required
+    n = reamin
+    c = people
+        count = int(math.factorial(n+c)/math.factorial(c)/math.factorial(n))
     return count
