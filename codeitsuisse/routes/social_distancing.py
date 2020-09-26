@@ -15,11 +15,12 @@ def soc_dis_main():
     n = data.get("tests")
     # logging.info("result : {}".format(result))
     ans = {}
-    for i in range(len(n)):
-        seats = n[str(i)]["seats"]
-        people = n[str(i)]["people"]
-        spaces = n[str(i)]["spaces"]
-        res = ways(seats, people, spaces)
+    for i in range(1, len(n) + 1):
+        # seats = n[str(i)]["seats"]
+        # people = n[str(i)]["people"]
+        # spaces = n[str(i)]["spaces"]
+        res = ways(n[str(i)]["seats"], n[str(i)]["people"], n[str(i)]["spaces"])
+        # res = ways(seats, people, spaces)
         ans[str(i)] = res
     
     result = {"answers" : ans}
