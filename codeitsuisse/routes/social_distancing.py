@@ -13,7 +13,7 @@ def soc_dis_main():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     n = data.get("tests")
-    logging.info("result : {}".format(result))
+    # logging.info("result : {}".format(result))
     ans = []
     for i in range(len(n)):
         seats = n[str(i)]["seats"] #n["0"]["seats"] i = 0 str(0) -> "0"
@@ -23,7 +23,7 @@ def soc_dis_main():
         ans.append({str(i) : res})
     
     result = {"answers" : ans}
-    logging.info("result : {}".format(result))
+    # logging.info("result : {}".format(result))
     return jsonify(result)
 
 def ways(seats, people, spaces):
