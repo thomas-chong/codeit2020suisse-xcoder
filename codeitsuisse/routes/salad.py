@@ -18,7 +18,9 @@ def main():
     return jsonify(result)
 
 def search(n, street_map):
-    res = []
+    if not street_map:
+        return 0
+    res = float('inf')
     for i in range(len(street_map)):
         cnt = 0
         length = 0
@@ -29,11 +31,16 @@ def search(n, street_map):
             else:
                 cnt += int(street_map[i][j])
                 length += 1
-                if length >= n:
-                    res.append(cnt)
-    if not res:
+                if length == n:
+                    res = min(res, cnt)
+                if length > n:
+                    cnt -= int(street_map[i][j-n])
+                    res = min(res, cnt)
+                    length = n
+    if res == float('inf'):
         return 0
-    return min(res)
+    return res
 
 # result = search(n, street_map)
 # print(result)
+
