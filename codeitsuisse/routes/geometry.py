@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 @app.route('/revisitgeometry', methods=['POST'])
 def main():
-    data = request.get_json();
+    data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
 
     s = data.get("shapeCoordinates")
@@ -26,9 +26,7 @@ def res(s, l):
         line1 = [s[i-1],s[i]]
         line2 = [l[0],l[1]]
         temp = line_intersection(line1,line2)
-        if not temp:
-           return
-        else:
+        if temp:
             result.append({"x" : temp[0], "y" : temp[1]})
     return result
 
@@ -48,4 +46,6 @@ def line_intersection(line1, line2):
     d = (det(*line1), det(*line2))
     x = det(d, xdiff) / div
     y = det(d, ydiff) / div
-    return [x, y]
+    if (x <= max(line1[0][0],line1[1][0]) and x >= min(line1[0][0],line1[1][0]) and y <= max(line1[0][1], line1[1][1]) and y >= min(line1[0][1], line1[1][1])):
+        return [x, y]
+    return
