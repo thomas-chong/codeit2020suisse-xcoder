@@ -31,8 +31,8 @@ def soc_dis_main():
 def ways(seats, people, spaces):
     l = []
     count = 0
-    n = seats-spaces*people+1
-    c = people
+    n = people + spaces * (people-1) + 1
+    c = seats - (people + spaces * (people-1))
     if (n > 0 and (n-c) > 0):
         count = int(math.factorial(n)/((math.factorial(c)*math.factorial(n-c))))
     return count
