@@ -46,9 +46,9 @@ def main():
 
         for key, value in ratio.items(): 
             if value == min(ratio.values()):
-                ans["Name"] = key
-                ans["OptimalHedgeRatio"] = value
-                ans["numContracts"] = numContracts[key]
+                ans["HedgePositionName"] = key
+                ans["OptimalHedgeRatio"] = float("{:.3f}".format(value))
+                ans["NumFuturesContract"] = int(numContracts[key])
 
         
         result.append(ans)
