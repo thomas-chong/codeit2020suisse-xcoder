@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 @app.route('/pre-tick', methods=['POST'])
 def main():
     data = request.get_json()
-    df = pd.read_csv(data)
+    df = pd.read_csv(data, delimiter='\n')
     df = df[-51:]
     df["Close"] = pd.to_numeric(df["Close"])
     df['SMA_50'] = df.iloc[:,df.columns == "Close"].rolling(window=50).mean()
