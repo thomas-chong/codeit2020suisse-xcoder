@@ -9,4 +9,5 @@ app = Flask(__name__)
 #import codeitsuisse.routes.fruit
 #import codeitsuisse.routes.farming
 #import codeitsuisse.routes.olympiad
-import codeitsuisse.routes.portfolio
+#import codeitsuisse.routes.portfolio
+import codeitsuisse.routes.tick
