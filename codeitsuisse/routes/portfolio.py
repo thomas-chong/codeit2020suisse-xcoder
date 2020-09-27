@@ -13,33 +13,45 @@ def main():
 
     result = []
 
-    portfolio = data.get("inputs")
-    val = []
-    sd_s = []
-    for i in range(len(portfolio)):
-        val[data.get("Portfolio").get("Name")] = data.get("Portfolio").get("Value")
-        sd_s[data.get("Portfolio").get("Name")] = data.get("Portfolio").get("SpotPrcVol")
-        index = data.get("IndexFutures")
-        coefficient = []
-        sd_f = []
-        price = []
-        ratio = []
-        numContracts = []
+    inputs = data.get("inputs")       
+    val = dict()
+    sd_s = dict()
+    for i in range(len(inputs)):
+        print(inputs[i])
+        ans = dict()
+        val[inputs[i].get("Portfolio").get("Name")] = inputs[i].get("Portfolio").get("Value")
+        print(val[inputs[i].get("Portfolio").get("Name")])
+        sd_s[inputs[i].get("Portfolio").get("Name")] = inputs[i].get("Portfolio").get("SpotPrcVol")
+        print(sd_s[inputs[i].get("Portfolio").get("Name")])
+        index = inputs[i].get("IndexFutures")
+        coefficient = dict()
+        sd_f = dict()
+        price = dict()
+        ratio = dict()
+        numContracts = dict()
+        notional = dict()
         for j in range(len(index)):
             coefficient[index[j].get("Name")] = index[j].get("CoRelationCoefficient")
+            print(coefficient[index[j].get("Name")])
             sd_f[index[j].get("Name")] = index[j].get("FuturePrcVol")
+            print(sd_f[index[j].get("Name")])
             price[index[j].get("Name")] = index[j].get("IndexFuturePrice")
+            print(price[index[j].get("Name")])
             notional[index[j].get("Name")] = index[j].get("Notional")
+            print(notional[index[j].get("Name")])
 
-            ratio[index[j].get("Name")] = coefficient[index[j].get("Name")] * sd_s[data.get("Portfolio").get("Name")] / sd_f[index[j].get("Name")]
-            numContracts[index[j].get("Name")] = ratio[index[j].get("Name")] * val[data.get("Portfolio").get("Name")] / (price[index[j].get("Name")]*notional[index[j].get("Name")])
+            ratio[index[j].get("Name")] = coefficient[index[j].get("Name")] * sd_s[inputs[i].get("Portfolio").get("Name")] / sd_f[index[j].get("Name")]
+            print(ratio[index[j].get("Name")])
+            numContracts[index[j].get("Name")] = ratio[index[j].get("Name")] * val[inputs[i].get("Portfolio").get("Name")] / (price[index[j].get("Name")]*notional[index[j].get("Name")])
 
-        ans = {"Name": index[0].get("Name"), "OptimalHedgeRatio": ratio[index[0].get("Name")], "Notional": numContracts[index[0].get("Name")]}
-        for j in range(len(index)):
-            if (ratio[j] < ans_ratio):
-                ans = {"Name": index[j].get("Name"), "OptimalHedgeRatio": ratio[index[j].get("Name")], "Notional": numContracts[index[j].get("Name")]}
+        for key, value in ratio.items(): 
+            if value == min(ratio.values()):
+                ans["Name"] = key
+                ans["OptimalHedgeRatio"] = value
+                ans["numContracts"] = numContracts[key]
+
         
-    result.append(ans)
+        result.append(ans)
 
     output = {"outputs": result}
     #logging.info("result : {}".format(result))
